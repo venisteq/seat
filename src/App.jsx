@@ -1,12 +1,8 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import Seat from "./pages/Seats";
 
 const App = () => {
-    return (
-        <Typography variant="h1">
-            A template for a react app using material-ui
-        </Typography>
-    );
+    return <Seat />;
 };
 
 export default App;

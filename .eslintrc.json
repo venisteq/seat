@@ -13,6 +13,8 @@
         "no-console": 0,
         "react/jsx-props-no-spreading": 0,
         "react/jsx-filename-extension": "off",
+        "import/prefer-default-export": "off",
+        "no-underscore-dangle": "off",
         "import/no-extraneous-dependencies": [
             "error",
             { "devDependencies": true }
