@@ -15,7 +15,7 @@ const index = ({ seat, onClick, style }) => {
                 height: "2rem",
 
                 cursor: "pointer",
-                background: diff > 0 ? "red" : "grey",
+                background: diff > 0 ? "red" : "green",
                 ...style,
             }}
             onClick={() => onClick(seat)}
