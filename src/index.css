@@ -11,3 +11,18 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
 }
+
+.view1,
+.view2,
+.view3 {
+    text-align: center;
+    padding: 32px;
+}
+.view1-top,
+.view2-top {
+    display: flex;
+}
+.view1-top > div:last-child {
+    flex: 1;
+    border-bottom: solid 1px #000000;
+}

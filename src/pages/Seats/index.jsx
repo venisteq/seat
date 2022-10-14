@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import dayjs from "dayjs";
+import { useParams } from "react-router-dom";
 
 import { Modal } from "@mui/material";
 
@@ -7,11 +8,16 @@ import Form from "../../components/form";
 import Profile from "../../components/Profile";
 // import Seat from "../../components/Seat";
 
+import Lab1 from "../Lab1";
 import Lab2 from "../Lab2";
+import Lab3 from "../Lab3";
 
 import Axios from "../../utils/axios";
 
 const Seats = () => {
+    // const location = useParams();
+    const { id } = useParams();
+
     const [seats, setSeats] = useState([]);
 
     const [formData, setFormData] = useState({
@@ -123,13 +129,22 @@ const Seats = () => {
             })
             .finally(() => setDisplayForm(false));
     };
+
+    const renderSeats = (value) => {
+        switch (true) {
+            case value === 1:
+                return <Lab1 seats={seats} onClick={seatClickHandler} />;
+            case value === 2:
+                return <Lab2 seats={seats} onClick={seatClickHandler} />;
+            case value === 3:
+                return <Lab3 seats={seats} onClick={seatClickHandler} />;
+            default:
+                return <div>&nbsp;</div>;
+        }
+    };
     return (
         <>
-            {/* {seats.length > 0 && (
-                <Seat seat={seats[0]} onClick={seatClickHandler} />
-            )} */}
-
-            <Lab2 seats={seats} onClick={seatClickHandler} />
+            {renderSeats(Number(id))}
             <Modal open={displayForm}>
                 <Form
                     onClose={() => setDisplayForm(false)}
